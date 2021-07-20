@@ -104,7 +104,7 @@ por más que el tiempo de espera será de 5 segundos, la diferencia entre el pri
 // Terminada la funcion printDate
 ~~~
 
-## Taller 1 - Petición a API
+## Taller 1 - Petición a API - callback
 
 #### Recurso:
 Como la información que vamos a tomar es extensa [API-data](https://rickandmortyapi.com/api/character/)
@@ -151,3 +151,4 @@ function fetchData(url_api, callback) {
     xhttp.send()
 }
 ~~~
+## Taller 1 - Petición a API - promise

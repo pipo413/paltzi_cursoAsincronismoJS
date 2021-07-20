@@ -5,7 +5,8 @@
   "main": "src/idnex.js",
   "scripts": {
     "callback": "node src/callback/index.js",
-    "callback:challenge": "node src/callback/chalenge.js"
+    "callback:challenge": "node src/callback/chalenge.js",
+    "promise": "node src/promise/index.js"
 
   },
   "repository": {
