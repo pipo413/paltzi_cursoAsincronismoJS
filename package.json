@@ -1,0 +1,24 @@
+{
+  "name": "platzi_cursoasincronismojs",
+  "version": "1.0.0",
+  "description": "Trabajar con asincronismo en JS",
+  "main": "src/idnex.js",
+  "scripts": {
+    "callback": "node src/callback/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipo413/platzi_cursoAsincronismoJS.git"
+  },
+  "keywords": [
+    "callbacks",
+    "promise",
+    "async"
+  ],
+  "author": "Zaragoza Jose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pipo413/platzi_cursoAsincronismoJS/issues"
+  },
+  "homepage": "https://github.com/pipo413/platzi_cursoAsincronismoJS#readme"
+}
