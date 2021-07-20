@@ -115,3 +115,39 @@ Podemos utilizar la extensión de google [JSON-viewer](https://chrome.google.com
 Nosotros queremos conocer la *Dimensión* del personaje, pero esto no está en la primera API, sino quue está en un link a una segunda API dentro de la primera, por lo que el proceso sería el seguiente
 
 Nuestra APP -> Seleccionar personaje -> Primera API -> Segunda API -> OBTENER DIMENSION 
+
+### comenzando
+* como vamos a trabajar con node (no con html), las peticiones las vamos a hacer con XMLHttpRequest que es la forma antigua de hacer llamados, como el profesor lo menciona usa ese y no Fetch que es el actual, por que no conocemos aùn las promesas y fecth es con promesas, para saber por que el profesor uso OPEN y todas esas funciones aqui està la forma de usar [XMLHttpRequest](https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest.)
+  * Instalando la dependecia para xml...
+~~~
+npm install xmlhttprequest --save
+~~~
+~~~JS
+// instanciando XML
+let XMLHttprequest = require('xmlhttprequest').XMLHttpRequest
+
+function fetchData(url_api, callback) {
+    // generando referencia al objeto que necesito
+    let xhttp = new XMLHttprequest()
+    // Hacemos el llamado a la url
+    xhttp.open('GET', url_api, true)
+    // Escucho lo que va a hacer esa conección
+    xhttp.onreadystatechange = function (event) {
+        // aca pongo la validación de los estados de peticion (son 5 -del 0 al 4)
+        if (xhttp.readyState === 4) {
+            // Ahora tomamos el status (por ejemplo el 200 es que todo marchó bien, 404 page not found y asi)
+            if (xhttp.status === 200) {
+                // El callback lleva generalmente el primer valor va a ser el error y el segundo el ok, como el correcto va a llevar un .json debemos parcearlo
+                // Si no pasamos el JSON con responseText vamos a obtener todo como un string.
+                callback(null, JSON.parse(xhttp.responseText))
+            } else {
+                // Forma correcta de colocar un ERROR
+                const error = new Error('Error' + url_api)
+                return callback(error, null)
+            }
+        }
+    }
+    // aqui enviamos la solicitud
+    xhttp.send()
+}
+~~~

@@ -4,7 +4,9 @@
   "description": "Trabajar con asincronismo en JS",
   "main": "src/idnex.js",
   "scripts": {
-    "callback": "node src/callback/index.js"
+    "callback": "node src/callback/index.js",
+    "callback:challenge": "node src/callback/chalenge.js"
+
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/pipo413/platzi_cursoAsincronismoJS/issues"
   },
-  "homepage": "https://github.com/pipo413/platzi_cursoAsincronismoJS#readme"
+  "homepage": "https://github.com/pipo413/platzi_cursoAsincronismoJS#readme",
+  "dependencies": {
+    "xmlhttprequest": "^1.8.0"
+  }
 }
